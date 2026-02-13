@@ -5,9 +5,11 @@ Informática e Gestão de Empresas
 ## Membros
 | Número  | Nome              |
 |---------|-------------------|
-| 112233  | Fábio Reis        |
+| 112244  | Fábio Reis        |
 | 122989  | Carolina Lisboa   |
 | 123022  | Rita Peixoto      |
+
+O repositório foi criado pelo 2º aluno com o número mais baixo (122989) para que pudessemos dar seguimento ao trabalho em regime diurno, uma vez que o aluno com o número mais baixo só pode frequentar as aulas de PL.
 
 ## Tipos de Navios
 | Batalha Naval        | Descobrimentos | English  | Dimensão | #Navios |
