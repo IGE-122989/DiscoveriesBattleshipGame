@@ -31,7 +31,9 @@ D)
 1. Confirma-se que o branch seleccionado é o main por defeito.
 2. Verifica-se no gráfico que o ramo com atualização mais recente é o main.
 3. Grupo nickname = TP06-5.
-7. Após a submissão do pull request, outro membro da equipa (o revisor) analisa e aceita o pedido.
+
+
+7.. Após a submissão do pull request, outro membro da equipa (o revisor) analisa e aceita o pedido.
 Quando o pull request é feito merge ao branch main, o grafo de commits em Insights -> Network mostra a junção (merge) entre o branch de trabalho e o branch principal.
 Se o branch continha commits novos, essa junção aparece visivelmente no grafo como uma ramificação e posterior convergência.
 No entanto, se o branch não tiver nenhum commit adicional em relação ao main, o pull request não cria realmente uma nova linha no grafo, o branch aparece como linear ou pode até nem aparecer destacado, porque na prática nunca divergiu do main.
@@ -41,6 +43,6 @@ E)
 3. Como Product Owner, consideramos que o jogo precisa de alguns requisitos essenciais para ser funcional. Cada jogador deve conseguir preparar corretamente o seu tabuleiro, posicionando a frota e recebendo alertas quando algo estiver errado. Durante o jogo, é importante permitir os três tiros por turno, mostrar imediatamente os resultados e atualizar o tabuleiro conhecido do adversário. O sistema deve também detetar quando um jogador perde todos os navios e declarar o vencedor. Para facilitar testes e continuidade, o jogo deveria permitir guardar e carregar o estado em JSON. Por fim, é necessário garantir uma visualização clara dos tabuleiros e, numa fase opcional, incluir funcionalidades extra como jogar contra uma IA ou consultar o histórico das jogadas.
 
 
-6. Numa reunião diária do Scrum, quando escolhemos uma nova user story para trabalhar, aquilo que fazemos no GitHub é abrir o separador dos Issues e atribuir essa user story a nós próprios através do campo Assignees. Deixamos também um comentário curto a indicar que vamos iniciar o trabalho nessa tarefa, para que toda a equipa fique com essa informação registada.
+6.. Numa reunião diária do Scrum, quando escolhemos uma nova user story para trabalhar, aquilo que fazemos no GitHub é abrir o separador dos Issues e atribuir essa user story a nós próprios através do campo Assignees. Deixamos também um comentário curto a indicar que vamos iniciar o trabalho nessa tarefa, para que toda a equipa fique com essa informação registada.
 Quando, mais tarde, concluirmos a implementação dessa user story, o passo seguinte é realizar um pull request que referencia o número do Issue e pedir a revisão de um colega. Depois de o pull request ser aprovado e integrado no main, voltamos ao Issue correspondente para o marcar como concluído, o que normalmente significa fechá-lo diretamente (ou ele é fechado automaticamente se o pull request incluir uma expressão como “Fixes #X”). Devemos ainda deixar um comentário final a indicar que o desenvolvimento está terminado e já se encontra integrado no projeto.
 Por fim, quando o Product Owner decide desistir de uma determinada user story, o procedimento no GitHub passa por abrir o Issue, adicionar-lhe uma etiqueta que indique que não será implementado (por exemplo, “won’t do”, “canceled” ou equivalente) e escrever um comentário a explicar a decisão. Depois disso, o Issue é fechado, mantendo-se o registo histórico da decisão e garantindo que a equipa sabe que essa funcionalidade deixa de fazer parte do backlog.
