@@ -11,6 +11,7 @@ Informática e Gestão de Empresas
 | 123022  | Rita Peixoto      |
 
 O repositório foi criado pelo 2º aluno com o número mais baixo (122989) para que pudessemos dar seguimento ao trabalho em regime diurno, uma vez que o aluno com o número mais baixo só pode frequentar as aulas de PL.
+UPDATE: Actualmente, foi adicionando um novo membro ao Grupo - Luís Manteigas com o número mais baixo, mas como explicado anteriormente, o repositório mantém-se em IGE-122989.
 
 ## Tipos de Navios
 | Batalha Naval        | Descobrimentos | English  | Dimensão | #Navios |
