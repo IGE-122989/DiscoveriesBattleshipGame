@@ -1,5 +1,7 @@
 /**
- *
+ * Represents a Caravel (Caravela) in the Discoveries Battleship Game.
+ * A Caravel occupies 2 consecutive squares on the grid, either horizontally or vertically.
+ * It corresponds to the traditional 2-cannon ship in the classic Battleship game.
  */
 package iscteiul.ista.battleship;
 
@@ -8,8 +10,17 @@ public class Caravel extends Ship {
     private static final String NAME = "Caravela";
 
     /**
-     * @param bearing the bearing where the Caravel heads to
-     * @param pos     initial point for positioning the Caravel
+     * Creates a new Caravel at the specified position with the given bearing.
+     * The Caravel occupies 2 consecutive squares on the grid:
+     * <ul>
+     *     <li>NORTH/SOUTH: occupies 2 squares vertically</li>
+     *     <li>EAST/WEST: occupies 2 squares horizontally</li>
+     * </ul>
+     *
+     * @param bearing the direction the Caravel is facing on the grid
+     * @param pos the upper left starting position of the Caravel on the grid
+     * @throws NullPointerException if the bearing is null
+     * @throws IllegalArgumentException if the bearing is not a valid compass direction
      */
     public Caravel(Compass bearing, IPosition pos) throws NullPointerException, IllegalArgumentException {
         super(Caravel.NAME, bearing, pos);
@@ -31,17 +42,16 @@ public class Caravel extends Ship {
             default:
                 throw new IllegalArgumentException("ERROR! invalid bearing for the caravel");
         }
-
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * Returns the size of the Caravel.
+     * A Caravel always occupies exactly 2 squares on the grid.
      *
-     * @see battleship.Ship#getSize()
+     * @return the size of the Caravel, which is always 2
      */
     @Override
     public Integer getSize() {
         return SIZE;
     }
-
 }
