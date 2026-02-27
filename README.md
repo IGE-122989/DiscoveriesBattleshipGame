@@ -38,4 +38,4 @@ No entanto, se o branch não tiver nenhum commit adicional em relação ao main,
 
 E)
 
-
+3. Como Product Owner, consideramos que o jogo precisa de alguns requisitos essenciais para ser funcional. Cada jogador deve conseguir preparar corretamente o seu tabuleiro, posicionando a frota e recebendo alertas quando algo estiver errado. Durante o jogo, é importante permitir os três tiros por turno, mostrar imediatamente os resultados e atualizar o tabuleiro conhecido do adversário. O sistema deve também detetar quando um jogador perde todos os navios e declarar o vencedor. Para facilitar testes e continuidade, o jogo deveria permitir guardar e carregar o estado em JSON. Por fim, é necessário garantir uma visualização clara dos tabuleiros e, numa fase opcional, incluir funcionalidades extra como jogar contra uma IA ou consultar o histórico das jogadas.
