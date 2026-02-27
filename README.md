@@ -24,6 +24,11 @@ UPDATE: Foi adicionado um novo membro ao grupo com número ainda mais baixo, no 
 
 Basic academic version of Battleship game to build upon.
 
+## Regras do Jogo
+O jogo Battleship consiste em dois jogadores que posicionam os seus navios num tabuleiro.
+Cada jogador tenta afundar os navios do adversário escolhendo coordenadas.
+Ganha quem afundar todos os navios primeiro.
+
 **Ficha 1:**
 
 D)
