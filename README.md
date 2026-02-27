@@ -31,3 +31,11 @@ D)
 1. Confirma-se que o branch seleccionado é o main por defeito.
 2. Verifica-se no gráfico que o ramo com atualização mais recente é o main.
 3. Grupo nickname = TP06-5.
+7. Após a submissão do pull request, outro membro da equipa (o revisor) analisa e aceita o pedido.
+Quando o pull request é feito merge ao branch main, o grafo de commits em Insights -> Network mostra a junção (merge) entre o branch de trabalho e o branch principal.
+Se o branch continha commits novos, essa junção aparece visivelmente no grafo como uma ramificação e posterior convergência.
+No entanto, se o branch não tiver nenhum commit adicional em relação ao main, o pull request não cria realmente uma nova linha no grafo, o branch aparece como linear ou pode até nem aparecer destacado, porque na prática nunca divergiu do main.
+
+E)
+
+
