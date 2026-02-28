@@ -1,4 +1,4 @@
-# Battleship
+# Battleship Conflito
 ## Grupo: TP06-5
 ### Curso
 Informática e Gestão de Empresas
