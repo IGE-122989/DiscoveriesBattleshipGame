@@ -5,7 +5,66 @@ package iscteiul.ista.battleship;
 
 import java.util.List;
 
-/** * Define o contrato de alto nível para a gestão de uma partida de Battleship. * * <p>Uma implementação de {@code IGame} é responsável por: * <ul> *   <li>Receber tiros, validar coordenadas, aplicar regras e atualizar estado;</li> *   <li>Manter contadores úteis (acertos, tiros repetidos, inválidos, navios afundados);</li> *   <li>Expor relatórios simples (listagem de tiros válidos, impressão da frota).</li> * </ul> * * <h2>Modelo de Interação</h2> * <p>O ciclo típico envolve: * <ol> *   <li>O cliente invoca {@link #fire(IPosition)} para efetuar um tiro;</li> *   <li>A implementação valida a posição, regista a jogada (quando aplicável) e *       devolve o navio atingido, ou {@code null} para “água”;</li> *   <li>Os contadores acessíveis por getters são atualizados conforme o resultado;</li> *   <li>O cliente pode consultar o histórico por {@link #getShots()} e imprimir *       resumos via {@link #printValidShots()} e {@link #printFleet()}.</li> * </ol> * * <h2>Definições importantes</h2> * <ul> *   <li><b>Tiro válido</b>: Posição dentro do tabuleiro, ainda não utilizada.</li> *   <li><b>Tiro repetido</b>: Posição já alvo de um tiro anterior (acerto ou água).</li> *   <li><b>Tiro inválido</b>: Posição fora dos limites do tabuleiro (ou nula, conforme política).</li> *   <li><b>Acerto (hit)</b>: Tiro válido que atinge pelo menos uma célula de um navio.</li> *   <li><b>Navio afundado</b>: Todas as células desse navio foram atingidas.</li> * </ul> * * <h2>Thread-safety</h2> * <p>A interface não impõe requisitos de sincronização. Implementações * <em>podem</em> ou não ser thread-safe. Caso pretendas uso concorrente, * documenta e sincroniza as operações críticas (especialmente {@link #fire(IPosition)}).</p> * * <h2>Exemplo de utilização</h2> * <pre>{@code * IGame game = ...; // implementação concreta * * IPosition p = Position.of(3, 7); * IShip hit = game.fire(p); * * if (hit != null) { *     System.out.println("Acertou em: " + hit.getName()); * } else { *     System.out.println("Água!"); * } * * System.out.printf("Hits: %d, Repetidos: %d, Inválidos: %d%n", *         game.getHits(), game.getRepeatedShots(), game.getInvalidShots()); * * game.printValidShots(); * game.printFleet(); * }</pre> * * @see IPosition * @see IShip * @since 1.0 */
+
+/**
+ * Define o contrato de alto nível para a gestão de uma partida de Battleship.
+ *
+ * <p>Uma implementação de {@code IGame} é responsável por:</p>
+ * <ul>
+ *   <li>Receber tiros, validar coordenadas, aplicar regras e atualizar estado;</li>
+ *   <li>Manter contadores úteis (acertos, tiros repetidos, inválidos, navios afundados);</li>
+ *   <li>Expor relatórios simples (listagem de tiros válidos, impressão da frota).</li>
+ * </ul>
+ *
+ * <h2>Modelo de Interação</h2>
+ * <p>O ciclo típico envolve:</p>
+ * <ol>
+ *   <li>O cliente invoca {@link #fire(IPosition)} para efetuar um tiro;</li>
+ *   <li>A implementação valida a posição, regista a jogada (quando aplicável) e devolve o navio atingido,
+ *       ou {@code null} para água;</li>
+ *   <li>Os contadores acessíveis por getters são atualizados conforme o resultado;</li>
+ *   <li>O cliente pode consultar o histórico por {@link #getShots()} e imprimir resumos via
+ *       {@link #printValidShots()} e {@link #printFleet()}.</li>
+ * </ol>
+ *
+ * <h2>Definições importantes</h2>
+ * <ul>
+ *   <li><b>Tiro válido</b>: posição dentro do tabuleiro, ainda não utilizada.</li>
+ *   <li><b>Tiro repetido</b>: posição já alvo de um tiro anterior (acerto ou água).</li>
+ *   <li><b>Tiro inválido</b>: posição fora dos limites do tabuleiro (ou nula, conforme política).</li>
+ *   <li><b>Acerto (hit)</b>: tiro válido que atinge pelo menos uma célula de um navio.</li>
+ *   <li><b>Navio afundado</b>: todas as células desse navio foram atingidas.</li>
+ * </ul>
+ *
+ * <h2>Thread-safety</h2>
+ * <p>A interface não impõe requisitos de sincronização. Implementações <em>podem</em> ou não ser thread-safe.
+ * Caso pretendas uso concorrente, documenta e sincroniza as operações críticas
+ * (especialmente {@link #fire(IPosition)}).</p>
+ *
+ * <h2>Exemplo de utilização</h2>
+ * <pre><code>
+ * IGame game = ...; // implementação concreta
+ *
+ * IPosition p = new Position(3, 7);
+ * IShip hit = game.fire(p);
+ *
+ * if (hit != null) {
+ *     System.out.println("Acertou em: " + hit.getName());
+ * } else {
+ *     System.out.println("Água!");
+ * }
+ *
+ * System.out.printf("Hits: %d, Repetidos: %d, Inválidos: %d%n",
+ *         game.getHits(), game.getRepeatedShots(), game.getInvalidShots());
+ *
+ * game.printValidShots();
+ * game.printFleet();
+ * </code></pre>
+ *
+ * @see IPosition
+ * @see IShip
+ * @since 1.0
+ */
 public interface IGame {
 
     /**

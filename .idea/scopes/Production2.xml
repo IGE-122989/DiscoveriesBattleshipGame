@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Production2" pattern="src:iscteiul.ista.battleship.Barge||src:iscteiul.ista.battleship.Caravel||src:iscteiul.ista.battleship.Carrack||src:iscteiul.ista.battleship.Compass||src:iscteiul.ista.battleship.Fleet||src:iscteiul.ista.battleship.Frigate||src:iscteiul.ista.battleship.Galleon||src:iscteiul.ista.battleship.Game||src:iscteiul.ista.battleship.IFleet||src:iscteiul.ista.battleship.IGame||src:iscteiul.ista.battleship.IPosition||src:iscteiul.ista.battleship.IShip||src:iscteiul.ista.battleship.Position||src:iscteiul.ista.battleship.Ship" />
+</component>
