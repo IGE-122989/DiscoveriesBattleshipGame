@@ -83,7 +83,7 @@ o snapshot do Index fica guardado permanentemente aqui.
 repositório local são enviados para aqui, ficando disponíveis para todos os
 membros da equipa.
 
-### G. 2.
+#### G. 2.
 
 Dois membros do grupo editaram simultaneamente a linha 1 do ficheiro README.md com texto diferente. Quando um dos membros
 tentou fazer push, o GitHub não permitiu o merge automático devido ao conflito. Para resolver, o GitHub identificou o ficheiro README.md como estando em conflito. 
