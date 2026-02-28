@@ -1,4 +1,4 @@
-# Battleship Conflito
+# Battleship 12
 ## Grupo: TP06-5
 ### Curso
 Informática e Gestão de Empresas
@@ -67,7 +67,7 @@ Por fim, quando o Product Owner decide desistir de uma determinada user story, o
 
 A diferença principal é que pelo browser é mais simples e rápido para coisas pequenas como editar o README ou gerir Issues, mas não fornece qualquer ajuda a escrever código. Através IntelliJ temos muito mais ferramentas disponíveis: autocomplete, deteção de erros e conseguimos correr o código.No entanto, demora mais a configurar. 
 
-### D. 1.
+#### D. 1.
 
 **Working Area:** Pasta no computador que contém todos os ficheiros e subdiretórios do projeto que
 editamos, adicionamos ou removemos. É neste local que trabalhamos diretamente no código.
