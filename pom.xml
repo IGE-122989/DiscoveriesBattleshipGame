@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>iscteiul.ista</groupId>
@@ -15,6 +15,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.release>17</maven.compiler.release>
+    <!-- Opcional: força encoding de reports/plugins -->
+    <encoding>UTF-8</encoding>
   </properties>
 
   <dependencyManagement>
@@ -28,26 +30,80 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-  
+
   <dependencies>
+    <!-- JUnit Jupiter (testes) -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
       <scope>test</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+
+    <!-- Log4j API (ADICIONADO) -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>2.25.2</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <!-- Log4j Core (já tinhas) -->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
       <version>2.25.2</version>
       <scope>compile</scope>
     </dependency>
+  </dependencies>
+
+  <!-- ADICIONADO: gerar Javadoc por Maven, com UTF-8 e doclint ajustado -->
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.6.3</version>
+        <configuration>
+          <!-- Gera só API pública (coincide com a tua chamada do IntelliJ: -public) -->
+          <show>public</show>
+          <!-- Encodings para evitar “mojibake” (acentos trocados) -->
+          <encoding>UTF-8</encoding>
+          <docencoding>UTF-8</docencoding>
+          <charset>UTF-8</charset>
+          <!-- Mantém a validação mas ignora “missing” para fechar já a build -->
+          <additionalJOptions>
+            <additionalJOption>-Xdoclint:all,-missing</additionalJOption>
+            <additionalJOption>-quiet</additionalJOption>
+          </additionalJOptions>
+          <!-- Opcional: se quiseres excluir packages de teste -->
+          <excludePackageNames>*.test</excludePackageNames>
+          <!-- Usa a release do compilador -->
+          <source>${maven.compiler.release}</source>
+        </configuration>
+      </plugin>
+
+      <!-- (Opcional) plugin de site para “mvn site” incluir javadoc automaticamente
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.12.1</version>
+      </plugin>
+      -->
+    </plugins>
+  </build>
 
   <reporting>
     <plugins>
       <plugin>
         <artifactId>maven-project-info-reports-plugin</artifactId>
       </plugin>
+      <!-- (Opcional) report de Javadoc no 'mvn site'
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.6.3</version>
+      </plugin>
+      -->
     </plugins>
   </reporting>
 </project>
