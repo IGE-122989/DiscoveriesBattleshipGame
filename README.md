@@ -1,4 +1,4 @@
-# Battleship 1345
+# Battleship
 ## Grupo: TP06-5
 ### Curso
 Informática e Gestão de Empresas
