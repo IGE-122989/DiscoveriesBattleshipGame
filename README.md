@@ -86,8 +86,6 @@ membros da equipa.
 ### G. 2.
 
 Dois membros do grupo editaram simultaneamente a linha 1 do ficheiro README.md com texto diferente. Quando um dos membros
-tentou fazer push, o GitHub não permitiu o merge automático devido ao conflito.
-
-Para resolver, o GitHub identificou o ficheiro README.md como estando em conflito. De seguida abrimos o ficheiro e vimos as duas versões em simultâneo:
-Current change(a versão do nosso branch) e Incoming change(a versão do colega no main). Analisámos as duas versões e decidimos aceitar apenas uma delas, e assim,
-que após resolver o conflito, foi possível fazer o merge.
+tentou fazer push, o GitHub não permitiu o merge automático devido ao conflito. Para resolver, o GitHub identificou o ficheiro README.md como estando em conflito. 
+De seguida abrimos o ficheiro e vimos as duas versões em simultâneo: Current change(a versão do nosso branch) e Incoming change(a versão do colega no main). 
+Analisámos as duas versões e decidimos aceitar apenas uma delas, e assim, que após resolver o conflito, foi possível fazer o merge.
