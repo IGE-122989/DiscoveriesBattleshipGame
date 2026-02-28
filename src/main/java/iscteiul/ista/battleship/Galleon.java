@@ -3,13 +3,27 @@
  */
 package iscteiul.ista.battleship;
 
+/**
+ * Represents a Galleon (Galeao) in the Battleship game.
+ *
+ * A Galleon occupies 5 positions on the board and can be placed
+ * facing one of the four compass directions: NORTH, SOUTH,
+ * EAST or WEST.
+ */
 public class Galleon extends Ship {
+
     private static final Integer SIZE = 5;
     private static final String NAME = "Galeao";
 
     /**
-     * @param bearing
-     * @param pos
+     * Creates a new Galleon with the specified direction and starting position.
+     *
+     * The occupied positions of the ship depend on its bearing.
+     *
+     * @param bearing the direction the ship is facing
+     * @param pos the reference (starting) position of the ship
+     * @throws NullPointerException if the bearing is null
+     * @throws IllegalArgumentException if the bearing is invalid
      */
     public Galleon(Compass bearing, IPosition pos) throws IllegalArgumentException {
         super(Galleon.NAME, bearing, pos);
@@ -30,16 +44,15 @@ public class Galleon extends Ship {
             case WEST:
                 fillWest(pos);
                 break;
-
             default:
                 throw new IllegalArgumentException("ERROR! invalid bearing for the galleon");
         }
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * Returns the size of the Galleon.
      *
-     * @see battleship.Ship#getSize()
+     * @return the number of board positions occupied by the ship (always 5)
      */
     @Override
     public Integer getSize() {
@@ -78,5 +91,4 @@ public class Galleon extends Ship {
         }
         getPositions().add(new Position(pos.getRow() + 2, pos.getColumn()));
     }
-
 }
