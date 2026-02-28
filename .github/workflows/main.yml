@@ -1,0 +1,48 @@
+name: PR Notifier (issue #23)
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, review_requested]
+
+# Permissões mínimas para comentar no PR
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  notify-reviewer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comentar no PR e mencionar @IGE-122989
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const prNumber = pr.number;
+            const prTitle  = pr.title;
+            const prUrl    = pr.html_url;
+            const author   = pr.user.login;
+
+            // Mensagem padrão
+            let body = [
+              "👋 **Notificação de revisão**",
+              "",
+              `**PR**: #${prNumber} — ${prTitle}`,
+              `**Autor**: @${author}`,
+              `**Ligação**: ${prUrl}`,
+              "",
+              "Responsável/Reviewer: @IGE-122989",
+              "",
+              "Contexto: conforme acordado na **issue #23**:",
+              "https://github.com/IGE-122989/DiscoveriesBattleshipGame/issues/23",
+              "",
+              "> Por favor, proceder à revisão quando possível. Obrigado!"
+            ].join("\n");
+
+            // Cria o comentário no próprio PR (PRs são Issues para efeitos de comentários)
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body
+            });
