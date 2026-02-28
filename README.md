@@ -67,3 +67,19 @@ Por fim, quando o Product Owner decide desistir de uma determinada user story, o
 ### C. 1.
 
 A diferença principal é que pelo browser é mais simples e rápido para coisas pequenas como editar o README ou gerir Issues, mas não fornece qualquer ajuda a escrever código. Através IntelliJ temos muito mais ferramentas disponíveis: autocomplete, deteção de erros e conseguimos correr o código.No entanto, demora mais a configurar. 
+
+### D. 1.
+
+**Working Area:** Pasta no computador que contém todos os ficheiros e subdiretórios do projeto que
+editamos, adicionamos ou removemos. É neste local que trabalhamos diretamente no código.
+
+**Staging Area:** Quando fazemos alterações na Working Area, o Git regista essas mudanças no Index,
+onde os ficheiros aparecem como "modificados". O Index guarda um snapshot dos
+ficheiros modificados que serão incluídos no próximo commit.
+
+**Local Repository:** Historial de commits guardado no nosso computador. Quando fazemos commit,
+o snapshot do Index fica guardado permanentemente aqui.
+
+**Remote Repository:** Repositório alojado no GitHub. Quando fazemos push, os commits do
+repositório local são enviados para aqui, ficando disponíveis para todos os
+membros da equipa.
